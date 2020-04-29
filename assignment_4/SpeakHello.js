@@ -1,3 +1,4 @@
+
 (function(window) {
     var helloSpeaker = new Object();
     var speakWord = "Hello";
@@ -6,4 +7,3 @@
     };
     window.helloSpeaker = helloSpeaker;
 })(window);
-© 2020 GitHub, Inc.
