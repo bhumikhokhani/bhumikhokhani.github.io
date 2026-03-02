@@ -42,7 +42,7 @@
 
     <div class="hero-buttons">
       <a href="#work" class="btn-outline">Explore Work</a>
-      <a href="assets/BhumiKhokhani_Resume.pdf" class="btn-outline">Resume</a>
+      <<a href="assets/BhumiKhokhani-Resume.pdf" class="btn-outline" target="_blank">Resume</a>
     </div>
   </div>
 
@@ -75,50 +75,27 @@
 
 <section id="endorsements" class="container section-alt">
   <h3>Professional Endorsements</h3>
-  <p>
-    Selected recommendations from cross-functional partners and leadership.
-  </p>
-
-  <div class="testimonial-container">
-    <button class="nav-btn" onclick="prevTestimonial()">‹</button>
-
-    <div class="testimonial-card">
-      <a id="testimonial-link" target="_blank">
-        <img id="testimonial-img" class="testimonial-img">
-      </a>
-      <p id="testimonial-text"></p>
-      <h4 id="testimonial-name"></h4>
-      <small id="testimonial-role"></small>
-    </div>
-
-    <button class="nav-btn" onclick="nextTestimonial()">›</button>
-  </div>
+  <div id="testimonial-grid" class="testimonial-grid"></div>
 
   <div class="linkedin-link">
-    <a href="https://www.linkedin.com/in/bhumikhokhani/recommendations/" target="_blank">
-      View more recommendations on LinkedIn →
+    <a href="https://www.linkedin.com/in/bhumikhokhani/details/recommendations/" target="_blank">
+      View more on LinkedIn →
     </a>
   </div>
 </section>
 
 <section class="container">
   <h3>Formal Recommendation Letters</h3>
-  <p>
-    Full-length written endorsements shared for hiring evaluation purposes.
-  </p>
-
-  <div class="letters-grid">
-    <a href="assets/letters/rec-letter-1.pdf" target="_blank" class="letter-card">
-      View Recommendation Letter – Senior Leader
-    </a>
-  </div>
+  <div id="letters-grid" class="letters-grid"></div>
 </section>
 
 <footer>
   © 2026 Bhumi Khokhani | Product Systems Strategist
 </footer>
 
+
 <script src="js/loadWork.js"></script>
-<script src="js/testimonial.js"></script>
+<script src="js/loadTestimonials.js"></script>
+<script src="js/loadLetters.js"></script>
 </body>
 </html>
