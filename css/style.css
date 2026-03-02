@@ -27,9 +27,20 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 24px 60px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 1000;
+  transition: 0.4s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(14,20,27,0.92);
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  color: white;
+  font-weight: 600;
 }
 
 .nav-links {
@@ -59,7 +70,7 @@ body {
 .hero-left {
   background: var(--dark);
   color: white;
-  padding: 140px 80px;
+  padding: 160px 80px;
   position: relative;
 }
 
@@ -99,6 +110,11 @@ body {
   text-decoration: none;
   font-weight: 600;
   margin-right: 16px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
 }
 
 .btn-outline {
@@ -114,22 +130,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .hero-right img {
   width: 70%;
   max-width: 380px;
   border-radius: 24px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+  box-shadow: 0 50px 120px rgba(0,0,0,0.25);
 }
 
-/* GOLD GEOMETRIC ACCENT */
+/* Gold accent */
+
 .hero-left::after {
   content: "";
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   background: var(--gold);
   opacity: 0.08;
   top: 60px;
@@ -137,10 +153,18 @@ body {
   transform: rotate(20deg);
 }
 
-/* ---------------- SECTION ---------------- */
+/* ---------------- SECTIONS ---------------- */
 
 .section {
-  padding: 120px 80px;
+  padding: 140px 80px 100px;
+}
+
+.section + .section {
+  margin-top: -40px;
+}
+
+.alt-bg {
+  background: white;
 }
 
 .section h3 {
@@ -159,90 +183,102 @@ body {
 .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
+  gap: 50px;
 }
 
 .work-card {
-  padding: 40px;
+  padding: 50px;
   background: white;
-  border-radius: 24px;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.06);
+  border-radius: 28px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.06);
   transition: 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: var(--gold);
+  opacity: 0.05;
+  top: -30px;
+  right: -30px;
+  border-radius: 50%;
 }
 
 .work-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-14px);
+  box-shadow: 0 60px 140px rgba(0,0,0,0.1);
 }
 
-/* ---------------- TESTIMONIAL SLIDER ---------------- */
+/* ---------------- TESTIMONIALS ---------------- */
 
 .testimonial-slider {
   display: flex;
   gap: 40px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+}
+
+.testimonial-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.testimonial-slider::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 10px;
 }
 
 .testimonial-card {
-  min-width: 380px;
-  scroll-snap-align: start;
-  padding: 40px;
-  background: white;
-  border-radius: 24px;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.05);
+  min-width: 420px;
+  padding: 50px;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border-radius: 28px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.06);
   position: relative;
+  scroll-snap-align: start;
+  transition: 0.4s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
 }
 
 .testimonial-card::before {
   content: "“";
-  font-size: 80px;
+  font-size: 100px;
   color: var(--gold);
   position: absolute;
   top: 10px;
   right: 30px;
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
-.testimonial-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.testimonial-img {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.testimonial-name a {
-  text-decoration: none;
-  color: var(--teal);
-  font-weight: 600;
-}
-
-/* ---------------- LETTER STACK ---------------- */
+/* ---------------- LETTERS ---------------- */
 
 .letters-grid {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .letter-thumb {
-  width: 260px;
-  height: 360px;
-  border-radius: 24px;
+  width: 280px;
+  height: 380px;
+  border-radius: 28px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 40px 90px rgba(0,0,0,0.1);
-  transition: 0.4s ease;
+  box-shadow: 0 50px 120px rgba(0,0,0,0.12);
+  transition: 0.5s ease;
+  position: relative;
 }
 
 .letter-thumb:hover {
-  transform: scale(1.05);
+  transform: translateY(-12px) scale(1.04);
 }
 
 .letter-thumb img {
@@ -298,23 +334,28 @@ footer {
 /* ---------------- MOBILE ---------------- */
 
 @media (max-width: 900px) {
+
   .hero {
     grid-template-columns: 1fr;
   }
 
   .hero-left {
-    padding: 100px 40px;
+    padding: 120px 40px;
   }
 
   .hero-left h1 {
-    font-size: 40px;
+    font-size: 42px;
   }
 
   .section {
-    padding: 80px 40px;
+    padding: 100px 40px;
   }
 
   .navbar {
     padding: 20px 40px;
+  }
+
+  .testimonial-card {
+    min-width: 300px;
   }
 }
