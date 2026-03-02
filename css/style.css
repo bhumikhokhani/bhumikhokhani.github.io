@@ -1,7 +1,8 @@
 :root {
   --teal: #0F766E;
-  --gold: #B58900;
-  --bg: #F7F8FA;
+  --gold: #C6A74A;
+  --dark: #0B0F14;
+  --bg: #F4F6F8;
   --text: #111827;
   --muted: #6B7280;
   --card: #ffffff;
@@ -16,7 +17,7 @@ body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 /* ---------------- NAV ---------------- */
@@ -25,26 +26,25 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 28px;
+  padding: 20px 40px;
   background: white;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #E5E7EB;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .logo {
   font-weight: 600;
-  font-size: 17px;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 18px;
-  padding: 0;
+  gap: 22px;
   margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -52,101 +52,69 @@ body {
   color: var(--text);
   font-weight: 500;
   font-size: 14px;
-  transition: 0.25s;
+  transition: 0.25s ease;
 }
 
 .nav-links a:hover {
   color: var(--teal);
 }
 
-/* ---------------- LAYOUT ---------------- */
+/* ---------------- HERO ---------------- */
 
-.container {
-  max-width: 1050px;
-  margin: auto;
-  padding: 55px 22px;   /* reduced spacing */
+.hero {
+  padding: 100px 40px 80px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: center;
+  background: linear-gradient(to bottom right, #ffffff, #f8fafc);
 }
 
-.section-alt {
-  background: white;
-}
-
-/* ---------------- TYPOGRAPHY ---------------- */
-
-h1 {
-  font-size: 40px;
-  margin-bottom: 6px;
+.hero h1 {
+  font-size: 48px;
+  margin: 0;
   position: relative;
   display: inline-block;
 }
 
-/* GOLD UNDERLINE UNDER NAME */
-h1::after {
+.hero h1::after {
   content: "";
   display: block;
   width: 65%;
-  height: 3px;
+  height: 4px;
   background: var(--gold);
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
-h2 {
-  font-size: 20px;
+.hero h2 {
+  font-size: 22px;
   font-weight: 500;
-  color: var(--text);
-  margin: 16px 0 20px;
+  margin: 22px 0;
 }
 
-h3 {
-  font-size: 24px;
-  margin-bottom: 14px;
-  position: relative;
-}
-
-h3::after {
-  content: "";
-  display: block;
-  width: 45px;
-  height: 3px;
-  background: var(--teal);
-  margin-top: 6px;
-}
-
-p {
+.hero p {
   color: var(--muted);
+  max-width: 640px;
   margin-bottom: 16px;
-}
-
-/* ---------------- HERO ---------------- */
-
-.hero {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 60px;
-  align-items: center;
 }
 
 .hero-image img {
   width: 100%;
-  max-width: 260px;
-  border-radius: 16px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+  max-width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.08);
 }
 
-.hero-buttons {
-  margin-top: 18px;
-}
-
-/* BUTTONS */
+/* Buttons */
 
 .btn-primary {
-  padding: 10px 18px;
-  border-radius: 6px;
+  padding: 12px 22px;
+  border-radius: 8px;
   background: var(--teal);
   color: white;
   text-decoration: none;
   font-weight: 500;
-  margin-right: 12px;
+  margin-right: 14px;
   transition: 0.3s;
 }
 
@@ -155,8 +123,8 @@ p {
 }
 
 .btn-outline {
-  padding: 10px 18px;
-  border-radius: 6px;
+  padding: 12px 22px;
+  border-radius: 8px;
   border: 1.5px solid var(--teal);
   color: var(--teal);
   text-decoration: none;
@@ -169,76 +137,95 @@ p {
   color: white;
 }
 
+/* ---------------- SECTION WRAPPER ---------------- */
+
+.section {
+  padding: 80px 40px;
+}
+
+.section h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.section-intro {
+  max-width: 720px;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
 /* ---------------- WORK GRID ---------------- */
 
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-top: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .work-card {
   background: var(--card);
-  padding: 22px;
-  border-radius: 14px;
-  border: 1px solid #e5e7eb;
-  transition: 0.3s;
+  padding: 28px;
+  border-radius: 20px;
+  border: 1px solid #E5E7EB;
+  transition: 0.35s ease;
   text-decoration: none;
   color: inherit;
 }
 
 .work-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.07);
   border-color: var(--teal);
 }
 
 /* ---------------- TESTIMONIALS ---------------- */
 
+.testimonial-wrapper {
+  position: relative;
+}
+
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 22px;
-  margin-top: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
 
 .testimonial-card {
-  background: var(--card);
-  padding: 22px;
-  border-radius: 14px;
-  border: 1px solid #e5e7eb;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid #E5E7EB;
   position: relative;
 }
 
 .testimonial-card::before {
   content: "“";
-  font-size: 40px;
-  color: var(--gold);
+  font-size: 70px;
   position: absolute;
-  top: 8px;
-  right: 16px;
-  opacity: 0.25;
+  top: 10px;
+  right: 25px;
+  color: var(--gold);
+  opacity: 0.2;
 }
 
 .testimonial-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 14px;
+  margin-bottom: 14px;
 }
 
 .testimonial-img {
-  width: 54px;
-  height: 54px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .testimonial-name a {
   text-decoration: none;
-  font-weight: 600;
   color: var(--teal);
+  font-weight: 600;
 }
 
 .testimonial-role {
@@ -246,43 +233,39 @@ p {
   color: var(--muted);
 }
 
-/* LinkedIn CTA */
+/* LinkedIn CTA Button */
 
 .linkedin-cta {
-  margin-top: 25px;
+  margin-top: 40px;
 }
 
 /* ---------------- LETTERS ---------------- */
 
 .letters-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
-  margin-top: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
 }
 
 .letter-thumb {
-  background: var(--card);
-  border-radius: 14px;
+  border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
-  transition: 0.3s;
-  border: 1px solid #e5e7eb;
+  transition: 0.35s;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
 }
 
 .letter-thumb img {
   width: 100%;
-  height: 320px;
+  height: 360px;
   object-fit: cover;
-  display: block;
 }
 
 .letter-thumb:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  transform: scale(1.03);
 }
 
-/* ---------------- MODAL ---------------- */
+/* Modal */
 
 .modal {
   display: none;
@@ -291,15 +274,15 @@ p {
   background: rgba(0,0,0,0.85);
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  z-index: 2000;
 }
 
 .modal-content {
   width: 95%;
-  max-width: 950px;
+  max-width: 1000px;
   height: 90%;
   background: white;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   position: relative;
 }
@@ -312,50 +295,45 @@ p {
 
 .close-btn {
   position: absolute;
-  top: 14px;
-  right: 18px;
-  font-size: 26px;
+  top: 16px;
+  right: 20px;
+  font-size: 28px;
   cursor: pointer;
 }
 
 /* ---------------- FOOTER ---------------- */
 
 footer {
+  padding: 60px 40px;
   text-align: center;
-  padding: 35px 20px;
-  margin-top: 40px;
+  background: white;
   border-top: 2px solid var(--gold);
 }
 
-/* ---------------- RESPONSIVE ---------------- */
+/* ---------------- MOBILE ---------------- */
 
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .hero-image {
-    text-align: left;
+    gap: 50px;
   }
 }
 
 @media (max-width: 600px) {
-  .container {
-    padding: 40px 16px;
+  .hero {
+    padding: 70px 24px;
+  }
+
+  .section {
+    padding: 60px 24px;
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .navbar {
     flex-direction: column;
-    gap: 10px;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 12px;
   }
 }
