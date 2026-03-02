@@ -1,4 +1,4 @@
-fetch('data/letters.json')
+fetch('data/letters.json', { cache: "no-store" })
   .then(res => res.json())
   .then(data => {
     const grid = document.getElementById('letters-grid');
