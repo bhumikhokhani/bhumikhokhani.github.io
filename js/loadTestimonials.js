@@ -1,4 +1,4 @@
-fetch('data/testimonials.json')
+fetch('data/testimonials.json', { cache: "no-store" })
   .then(res => res.json())
   .then(data => {
     const grid = document.getElementById('testimonial-grid');
