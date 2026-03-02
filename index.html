@@ -10,13 +10,9 @@
 <link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<div id="letter-modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal()">×</span>
-    <iframe id="modal-frame"></iframe>
-  </div>
-</div>
+
 <body>
+
 <nav class="navbar">
   <div class="logo">Bhumi Khokhani</div>
   <ul class="nav-links">
@@ -29,28 +25,28 @@
 
 <section class="container hero">
   <div class="hero-text">
-    <h1>Designing clarity inside complex product systems.</h1>
+    <h1>Hi, I’m Bhumi Khokhani.</h1>
 
     <h2>
-      Product Systems Strategist working across UX writing, technical architecture,
-      automation design, and product marketing.
+      I design clarity inside complex product systems.
     </h2>
 
     <p>
-      I work where scale introduces ambiguity — automation-heavy return journeys,
-      multilingual voicebot ecosystems, marketplace policy constraints, and
-      documentation frameworks that must align with business logic.
+      My work sits at the intersection of UX writing, technical architecture,
+      product marketing, and automation design. I work on systems where scale
+      introduces ambiguity — policy-heavy marketplaces, multilingual voicebot
+      ecosystems, and operationally dense return journeys.
     </p>
 
     <p>
-      My work is structure-first. Before language, I map decision trees,
-      operational dependencies, and failure states. Writing becomes the visible
-      interface of deeper product thinking.
+      I start with structure. I map decision trees, system constraints,
+      and dependency flows before writing a single word. Language becomes
+      the visible interface of deeper product thinking.
     </p>
 
     <div class="hero-buttons">
       <a href="#work" class="btn-outline">Explore Work</a>
-      <a href="assets/BhumiKhokhani_Resume.pdf" class="btn-outline" target="_blank">Resume</a>
+      <a href="assets/BhumiKhokhani-Resume.pdf" class="btn-outline" target="_blank">Resume</a>
     </div>
   </div>
 
@@ -60,24 +56,20 @@
 </section>
 
 <section id="approach" class="container section-alt">
-  <h3>How I Approach Systems</h3>
+  <h3>How I Think About Systems</h3>
   <p>
-    My foundation in technical writing and product marketing shaped how I think
-    about content — not as surface-level copy, but as infrastructure.
+    My foundation in technical writing shaped how I approach product work.
+    Documentation, automation logic, governance, conversational flows —
+    they cannot exist in silos.
   </p>
   <p>
-    Documentation, automation logic, conversational flows, onboarding systems,
-    governance models, policy interpretation — they must operate as one coherent
-    system. Language is not decoration; it is structural alignment.
+    Content is not decoration. It is structural alignment across product,
+    engineering, and operations.
   </p>
 </section>
 
 <section id="work" class="container">
   <h3>Selected Work</h3>
-  <p>
-    Product and automation systems designed for scale across marketplaces,
-    policy environments, and multilingual contexts.
-  </p>
   <div id="work-grid" class="work-grid"></div>
 </section>
 
@@ -101,14 +93,17 @@
   © 2026 Bhumi Khokhani
 </footer>
 
+<!-- Modal (only once, fixed position) -->
 <div id="letter-modal" class="modal">
   <div class="modal-content">
     <span class="close-btn" onclick="closeModal()">×</span>
     <iframe id="modal-frame"></iframe>
   </div>
 </div>
+
 <script src="js/loadWork.js"></script>
 <script src="js/loadTestimonials.js"></script>
 <script src="js/loadLetters.js"></script>
+
 </body>
 </html>
