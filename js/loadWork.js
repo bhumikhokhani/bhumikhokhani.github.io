@@ -1,4 +1,4 @@
-fetch('data/caseStudies.json')
+fetch('data/caseStudies.json', { cache: "no-store" })
   .then(res => res.json())
   .then(data => {
     const grid = document.getElementById('work-grid');
