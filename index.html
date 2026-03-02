@@ -4,122 +4,76 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bhumi Khokhani</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="logo">Bhumi Khokhani</div>
-  <nav>
-    <a href="#work">Work</a>
-    <a href="#proof">Proof</a>
-    <a href="https://www.linkedin.com/in/bhumikhokhani/" target="_blank">LinkedIn</a>
-  </nav>
-</header>
+<nav class="navbar">
+  <div style="color:white;font-weight:600;">Bhumi Khokhani</div>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#endorsements">Endorsements</a></li>
+    <li><a href="https://www.linkedin.com/in/bhumikhokhani/details/projects/" target="_blank">Projects</a></li>
+    <li><a href="https://www.linkedin.com/in/bhumikhokhani/" target="_blank">LinkedIn</a></li>
+  </ul>
+</nav>
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>
-      I design clarity<br>
-      inside <span>complex product systems.</span>
-    </h1>
+  <div class="hero-left">
+    <h1>Hi, I’m <span>Bhumi</span>.</h1>
+    <h2>I design clarity across product, content, and automation systems.</h2>
 
-    <p class="hero-sub">
-      UX Writing. Product Systems. Program Thinking. AI Workflows.
-      I step in where scale creates ambiguity.
+    <p>
+      I operate at the intersection of UX writing, product strategy,
+      technical systems, AI-enabled workflows, and cross-functional execution.
+      I don’t work inside titles — I work at system depth.
     </p>
 
-    <div class="hero-actions">
-      <a href="#work" class="btn-primary">View Selected Systems</a>
-      <a href="#" class="btn-ghost">Download Resume</a>
+    <div class="hero-buttons">
+      <a href="#work" class="btn-primary">Explore Work</a>
+      <a href="assets/BhumiKhokhani-Resume.pdf" target="_blank" class="btn-outline">Resume</a>
     </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="assets/bhumikhokhani.jpeg" alt="Bhumi Khokhani">
   </div>
 </section>
 
-<section class="positioning">
-  <div class="positioning-grid">
-    <div>
-      <h2>More than a title.</h2>
-    </div>
-    <div>
-      <p>
-        I work across UX writing, content architecture, program execution,
-        automation-heavy journeys, AI-enabled support systems, and product marketing.
-      </p>
-      <p>
-        My strength isn’t one discipline. It’s the ability to see structural gaps
-        between them — and close those gaps.
-      </p>
-    </div>
-  </div>
+<section id="work" class="section">
+  <h3>Selected Work</h3>
+  <p class="section-intro">
+    Systems designed for scale, ambiguity, and operational complexity.
+  </p>
+  <div id="work-grid" class="work-grid"></div>
 </section>
 
-<section id="work" class="work">
-  <h2 class="section-title">Selected Systems</h2>
-
-  <div class="work-grid">
-    <div class="work-card large">
-      <h3>Returns Workflow Redesign</h3>
-      <p>Multi-surface journey redesign reducing ambiguity across automation-driven flows.</p>
-    </div>
-
-    <div class="work-card">
-      <h3>Voicebot Policy System</h3>
-      <p>Conversational AI documentation and escalation architecture.</p>
-    </div>
-
-    <div class="work-card">
-      <h3>Content Governance Framework</h3>
-      <p>Scalable content system aligned with program velocity.</p>
-    </div>
-  </div>
+<section id="endorsements" class="section">
+  <h3>Professional Endorsements</h3>
+  <div id="testimonial-grid" class="testimonial-slider"></div>
 </section>
 
-<section id="proof" class="proof">
-  <h2 class="section-title light">Professional Endorsements</h2>
-
-  <div class="testimonial-strip">
-    <div class="testimonial">
-      <p>
-        Bhumi operates at a systems level. She doesn’t just write —
-        she identifies structural inefficiencies and redesigns them.
-      </p>
-      <div class="person">
-        <img src="person1.jpg">
-        <span>Senior Product Manager</span>
-      </div>
-    </div>
-
-    <div class="testimonial">
-      <p>
-        Her ability to bridge UX writing and program strategy is rare.
-      </p>
-      <div class="person">
-        <img src="person2.jpg">
-        <span>Engineering Lead</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="letters">
-  <h2 class="section-title">Formal Recommendations</h2>
-
-  <div class="letters-grid">
-    <div class="letter">
-      <img src="letter1.jpg" alt="Recommendation 1">
-    </div>
-    <div class="letter">
-      <img src="letter2.jpg" alt="Recommendation 2">
-    </div>
-  </div>
+<section class="section">
+  <h3>Formal Recommendation Letters</h3>
+  <div id="letters-grid" class="letters-grid"></div>
 </section>
 
 <footer>
   © 2026 Bhumi Khokhani
 </footer>
+
+<div id="letter-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <iframe id="modal-frame"></iframe>
+  </div>
+</div>
+
+<script src="js/loadWork.js"></script>
+<script src="js/loadTestimonials.js"></script>
+<script src="js/loadLetters.js"></script>
 
 </body>
 </html>
