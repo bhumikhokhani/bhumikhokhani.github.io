@@ -4,12 +4,29 @@ fetch('data/letters.json')
     const grid = document.getElementById('letters-grid');
 
     data.forEach(item => {
-      const card = document.createElement('a');
-      card.href = item.file;
-      card.target = "_blank";
-      card.className = 'letter-card';
-      card.innerText = item.title;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'letter-wrapper';
 
-      grid.appendChild(card);
+      wrapper.innerHTML = `
+        <div class="letter-thumb" data-full="${item.full}">
+          <img src="${item.thumbnail}" alt="${item.title}">
+          <div class="letter-overlay">${item.title}</div>
+        </div>
+      `;
+
+      grid.appendChild(wrapper);
+    });
+
+    document.querySelectorAll('.letter-thumb').forEach(el => {
+      el.addEventListener('click', function() {
+        const src = this.getAttribute('data-full');
+        document.getElementById('modal-frame').src = src;
+        document.getElementById('letter-modal').style.display = 'flex';
+      });
     });
   });
+
+function closeModal() {
+  document.getElementById('letter-modal').style.display = 'none';
+  document.getElementById('modal-frame').src = '';
+}
