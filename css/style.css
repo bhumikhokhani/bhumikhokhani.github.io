@@ -1,10 +1,10 @@
 :root {
+  --dark: #0C1117;
+  --gold: #C8A24D;
   --teal: #0F766E;
-  --gold: #C6A74A;
-  --dark: #0E141B;
-  --light: #F5F7FA;
-  --text-dark: #0E141B;
-  --text-light: #FFFFFF;
+  --light: #F3F4F6;
+  --white: #ffffff;
+  --text: #111827;
   --muted: #6B7280;
 }
 
@@ -16,198 +16,160 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background: var(--light);
-  color: var(--text-dark);
-  overflow-x: hidden;
+  color: var(--text);
+  line-height: 1.7;
 }
 
 /* ---------------- NAV ---------------- */
 
 .navbar {
+  position: fixed;
+  width: 100%;
+  padding: 22px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 60px;
-  position: absolute;
-  width: 100%;
+  background: transparent;
   z-index: 1000;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
+.navbar a {
   text-decoration: none;
-  color: var(--text-light);
   font-weight: 500;
   font-size: 14px;
-  letter-spacing: 0.4px;
+  margin-left: 26px;
+  color: white;
 }
 
 /* ---------------- HERO ---------------- */
 
 .hero {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  min-height: 100vh;
-}
-
-.hero-left {
   background: var(--dark);
   color: white;
-  padding: 140px 80px;
+  padding: 180px 60px 140px;
   position: relative;
 }
 
-.hero-left h1 {
-  font-size: 64px;
+.hero h1 {
+  font-size: 72px;
   margin: 0;
-  line-height: 1.1;
+  line-height: 1.05;
+  letter-spacing: -1px;
 }
 
-.hero-left h1 span {
+.hero h1 span {
   color: var(--gold);
 }
 
-.hero-left h2 {
-  font-size: 22px;
+.hero h2 {
+  margin-top: 28px;
+  font-size: 24px;
   font-weight: 400;
-  margin-top: 24px;
-  max-width: 520px;
-  opacity: 0.9;
+  max-width: 700px;
+  opacity: 0.85;
 }
 
-.hero-left p {
-  margin-top: 24px;
-  max-width: 520px;
-  opacity: 0.75;
+.hero p {
+  margin-top: 28px;
+  max-width: 650px;
+  opacity: 0.7;
 }
 
 .hero-buttons {
-  margin-top: 36px;
+  margin-top: 40px;
 }
 
 .btn-primary {
-  padding: 14px 26px;
-  border-radius: 8px;
   background: var(--gold);
   color: var(--dark);
+  padding: 14px 28px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  margin-right: 16px;
+  margin-right: 18px;
 }
 
 .btn-outline {
-  padding: 14px 26px;
-  border-radius: 8px;
   border: 1px solid white;
-  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
   text-decoration: none;
-}
-
-.hero-right {
-  background: var(--light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.hero-right img {
-  width: 70%;
-  max-width: 380px;
-  border-radius: 24px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.2);
-}
-
-/* GOLD GEOMETRIC ACCENT */
-.hero-left::after {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: var(--gold);
-  opacity: 0.08;
-  top: 60px;
-  right: 60px;
-  transform: rotate(20deg);
+  color: white;
 }
 
 /* ---------------- SECTION ---------------- */
 
 .section {
-  padding: 120px 80px;
+  padding: 120px 60px;
+  position: relative;
+}
+
+.section-dark {
+  background: white;
 }
 
 .section h3 {
   font-size: 42px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .section-intro {
-  max-width: 600px;
+  max-width: 700px;
   margin-bottom: 60px;
   color: var(--muted);
 }
 
 /* ---------------- WORK ---------------- */
 
-.work-grid {
+.work-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
 }
 
 .work-card {
-  padding: 40px;
   background: white;
-  border-radius: 24px;
+  padding: 50px;
+  border-radius: 18px;
   box-shadow: 0 30px 70px rgba(0,0,0,0.06);
-  transition: 0.4s ease;
+  transition: 0.35s ease;
 }
 
 .work-card:hover {
   transform: translateY(-10px);
 }
 
-/* ---------------- TESTIMONIAL SLIDER ---------------- */
+/* ---------------- TESTIMONIALS ---------------- */
 
-.testimonial-slider {
-  display: flex;
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 40px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
 }
 
 .testimonial-card {
-  min-width: 380px;
-  scroll-snap-align: start;
-  padding: 40px;
-  background: white;
-  border-radius: 24px;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.05);
+  background: var(--white);
+  padding: 50px;
+  border-radius: 18px;
   position: relative;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.05);
 }
 
 .testimonial-card::before {
   content: "“";
-  font-size: 80px;
-  color: var(--gold);
   position: absolute;
-  top: 10px;
-  right: 30px;
-  opacity: 0.2;
+  top: 20px;
+  right: 40px;
+  font-size: 100px;
+  color: var(--gold);
+  opacity: 0.15;
 }
 
 .testimonial-header {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .testimonial-img {
@@ -219,26 +181,26 @@ body {
 
 .testimonial-name a {
   text-decoration: none;
-  color: var(--teal);
   font-weight: 600;
+  color: var(--teal);
 }
 
-/* ---------------- LETTER STACK ---------------- */
+/* ---------------- LETTERS ---------------- */
 
 .letters-grid {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
 .letter-thumb {
-  width: 260px;
-  height: 360px;
-  border-radius: 24px;
+  width: 280px;
+  height: 380px;
+  border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 40px 90px rgba(0,0,0,0.1);
-  transition: 0.4s ease;
+  transition: 0.4s;
 }
 
 .letter-thumb:hover {
@@ -282,39 +244,26 @@ body {
   position: absolute;
   top: 20px;
   right: 30px;
-  font-size: 30px;
+  font-size: 28px;
   cursor: pointer;
-}
-
-/* ---------------- FOOTER ---------------- */
-
-footer {
-  padding: 100px 80px;
-  background: var(--dark);
-  color: white;
-  text-align: center;
 }
 
 /* ---------------- MOBILE ---------------- */
 
 @media (max-width: 900px) {
   .hero {
-    grid-template-columns: 1fr;
+    padding: 140px 30px 100px;
   }
 
-  .hero-left {
-    padding: 100px 40px;
-  }
-
-  .hero-left h1 {
-    font-size: 40px;
+  .hero h1 {
+    font-size: 42px;
   }
 
   .section {
-    padding: 80px 40px;
+    padding: 80px 30px;
   }
 
-  .navbar {
-    padding: 20px 40px;
+  .work-layout {
+    grid-template-columns: 1fr;
   }
 }
