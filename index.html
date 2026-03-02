@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bhumi Khokhani</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <nav class="navbar">
-  <div style="color:white;font-weight:600;">Bhumi Khokhani</div>
+  <div class="logo">Bhumi Khokhani</div>
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
     <li><a href="#endorsements">Endorsements</a></li>
@@ -50,7 +50,7 @@
   <div id="work-grid" class="work-grid"></div>
 </section>
 
-<section id="endorsements" class="section">
+<section id="endorsements" class="section alt-bg">
   <h3>Professional Endorsements</h3>
   <div id="testimonial-grid" class="testimonial-slider"></div>
 </section>
@@ -70,6 +70,13 @@
     <iframe id="modal-frame"></iframe>
   </div>
 </div>
+
+<script>
+window.addEventListener("scroll", function() {
+  const nav = document.querySelector(".navbar");
+  nav.classList.toggle("scrolled", window.scrollY > 50);
+});
+</script>
 
 <script src="js/loadWork.js"></script>
 <script src="js/loadTestimonials.js"></script>
