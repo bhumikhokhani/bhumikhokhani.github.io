@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Return Refund Status Resolver",
+    "summary": "Transforming static refund updates into an automation-driven interactive flow.",
+    "impact": "+151 bps automation rate improvement",
+    "link": "case-study-return.html"
+  },
+  {
+    "title": "Hindi–English Voicebot Audit",
+    "summary": "Identifying structural inconsistencies across bilingual conversational flows.",
+    "impact": "Reduced fallback loops across critical intents",
+    "link": "case-study-voicebot.html"
+  }
+]
