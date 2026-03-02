@@ -1,6 +1,12 @@
 [
   {
-    "title": "Senior Leader Recommendation",
-    "file": "assets/letters/rec-letter-1.pdf"
+    "title": "Recommendation – Senior Manager",
+    "thumbnail": "assets/letters/rec1.png",
+    "full": "assets/letters/rec1.pdf"
+  },
+  {
+    "title": "Recommendation – Director",
+    "thumbnail": "assets/letters/rec2.png",
+    "full": "assets/letters/rec2.pdf"
   }
 ]
