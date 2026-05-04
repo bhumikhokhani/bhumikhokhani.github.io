@@ -9,12 +9,12 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 // Fetch Hashnode RSS feed
-fetch("https://hashnode.com/@yourusername/rss")
+fetch("https://bhumikhokhani.hashnode.dev/rss.xml")
   .then(response => response.text())
   .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
   .then(data => {
     const items = data.querySelectorAll("item");
-    let blogSection = document.getElementById("blog-list");
+    let blogSection = document.getElementById("blogs");
     items.forEach(el => {
       let title = el.querySelector("title").textContent;
       let link = el.querySelector("link").textContent;
