@@ -115,4 +115,13 @@ header {
 }
 
 blockquote {
-  font-style:
+  font-style: italic;
+  margin: 0;
+}
+
+footer {
+  background: var(--dark-bg);
+  color: var(--text-light);
+  text-align: center;
+  padding: 2rem;
+}
