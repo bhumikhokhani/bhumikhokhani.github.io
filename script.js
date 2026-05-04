@@ -1,32 +1,23 @@
-fetch('data/letters.json', { cache: "no-store" })
-  .then(res => res.json())
-  .then(data => {
-    const grid = document.getElementById('letters-grid');
-
-    data.forEach(item => {
-      const wrapper = document.createElement('div');
-      wrapper.className = 'letter-wrapper';
-
-      wrapper.innerHTML = `
-        <div class="letter-thumb" data-full="${item.full}">
-          <img src="${item.thumbnail}" alt="${item.title}">
-          <div class="letter-overlay">${item.title}</div>
-        </div>
-      `;
-
-      grid.appendChild(wrapper);
-    });
-
-    document.querySelectorAll('.letter-thumb').forEach(el => {
-      el.addEventListener('click', function() {
-        const src = this.getAttribute('data-full');
-        document.getElementById('modal-frame').src = src;
-        document.getElementById('letter-modal').style.display = 'flex';
-      });
+// Smooth scroll for navigation
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
     });
   });
+});
 
-function closeModal() {
-  document.getElementById('letter-modal').style.display = 'none';
-  document.getElementById('modal-frame').src = '';
-}
+// Fetch Hashnode RSS feed
+fetch("https://hashnode.com/@yourusername/rss")
+  .then(response => response.text())
+  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+  .then(data => {
+    const items = data.querySelectorAll("item");
+    let blogSection = document.getElementById("blog-list");
+    items.forEach(el => {
+      let title = el.querySelector("title").textContent;
+      let link = el.querySelector("link").textContent;
+      blogSection.innerHTML += `<li><a href="${link}" target="_blank">${title}</a></li>`;
+    });
+  });
