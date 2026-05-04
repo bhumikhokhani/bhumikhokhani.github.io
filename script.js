@@ -14,9 +14,7 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://bhumikhokhani.hashno
   .then(response => response.json())
   .then(data => {
     let blogSection = document.getElementById("blogs");
-    if (!blogSection) return;
-
-    // Limit to latest 5 posts
+    blogSection.innerHTML = "";
     data.items.slice(0, 5).forEach(item => {
       const blogCard = document.createElement("div");
       blogCard.classList.add("card");
@@ -32,8 +30,5 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://bhumikhokhani.hashno
   })
   .catch(error => {
     console.error("Error fetching blog feed:", error);
-    let blogSection = document.getElementById("blogs");
-    if (blogSection) {
-      blogSection.innerHTML = "<p>Unable to load blogs at the moment.</p>";
-    }
+    document.getElementById("blogs").innerHTML = "<p>Unable to load blogs at the moment.</p>";
   });
