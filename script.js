@@ -10,23 +10,31 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 // Fetch Hashnode RSS feed via rss2json proxy
-fetch("https://api.rss2json.com/v1/api.json?rss_url=https://bhumikhokhani.hashnode.dev/rss.xml")
+const rssUrl = "https://bhumikhokhani.hashnode.dev/rss.xml";
+const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
     let blogSection = document.getElementById("blogs");
     blogSection.innerHTML = "";
-    data.items.slice(0, 5).forEach(item => {
-      const blogCard = document.createElement("div");
-      blogCard.classList.add("card");
 
-      blogCard.innerHTML = `
-        <h3>${item.title}</h3>
-        <p>${new Date(item.pubDate).toLocaleDateString()}</p>
-        <a href="${item.link}" target="_blank">Read More</a>
-      `;
+    if (data.items && data.items.length > 0) {
+      data.items.slice(0, 5).forEach(item => {
+        const blogCard = document.createElement("div");
+        blogCard.classList.add("card");
 
-      blogSection.appendChild(blogCard);
-    });
+        blogCard.innerHTML = `
+          <h3>${item.title}</h3>
+          <p>${new Date(item.pubDate).toLocaleDateString()}</p>
+          <a href="${item.link}" target="_blank">Read More</a>
+        `;
+
+        blogSection.appendChild(blogCard);
+      });
+    } else {
+      blogSection.innerHTML = "<p>No blog posts found.</p>";
+    }
   })
   .catch(error => {
     console.error("Error fetching blog feed:", error);
