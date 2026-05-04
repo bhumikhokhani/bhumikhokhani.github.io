@@ -119,6 +119,59 @@ blockquote {
   margin: 0;
 }
 
+/* Blog cards */
+#blogs .card {
+  background: #fff;
+  color: #111;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section.dark #blogs .card {
+  background: #222;
+  color: #eee;
+}
+
+#blogs .card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.3rem;
+}
+
+#blogs .card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.section.dark #blogs .card p {
+  color: #ccc;
+}
+
+#blogs .card a {
+  margin-top: auto;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--primary);
+  transition: color 0.3s;
+}
+
+#blogs .card a:hover {
+  color: #333;
+}
+
+#blogs .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+
 footer {
   background: var(--dark-bg);
   color: var(--text-light);
