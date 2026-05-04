@@ -1,118 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bhumi Khokhani</title>
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhumi Khokhani | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <h1>Bhumi Khokhani</h1>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#fun">Fun Stuff</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/yourprofile" target="_blank"><img src="assets/social-icons/linkedin.svg" alt="LinkedIn"></a>
+        <a href="https://github.com/bhumikhokhani" target="_blank"><img src="assets/social-icons/github.svg" alt="GitHub"></a>
+        <a href="https://instagram.com/yourcrochet" target="_blank"><img src="assets/social-icons/instagram.svg" alt="Instagram"></a>
+      </div>
+    </nav>
+  </header>
 
-<nav class="navbar">
-  <div class="logo">Bhumi Khokhani</div>
-  <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#endorsements">Endorsements</a></li>
-    <li><a href="https://www.linkedin.com/in/bhumikhokhani/details/projects/" target="_blank">Projects</a></li>
-    <li><a href="https://www.linkedin.com/in/bhumikhokhani/" target="_blank">LinkedIn</a></li>
-  </ul>
-</nav>
+  <!-- Hero -->
+  <section class="hero">
+    <h2>UX Writer & Product Strategist</h2>
+    <p>Bridging design, technology, and content to deliver impactful results.</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-left">
-    <h1>Hi, I’m Bhumi Khokhani</h1>
-    <div class="hero-underline"></div>
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a curious mind with experience in UX writing, product management, and design. I enjoy taking projects from idea to completion with a strong focus on user experience.</p>
+  </section>
 
-    <h2>
-      I build clarity inside complex product, content, AI, and operational systems.
-    </h2>
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="case-studies/amazon.html">Amazon UX Writing</a></li>
+      <li><a href="case-studies/faqprime.html">FAQPRIME Product Strategy</a></li>
+      <li><a href="case-studies/hacktivspace.html">HacktivSpace AI/ML</a></li>
+    </ul>
+  </section>
 
-    <p>
-      I don’t operate inside titles. I work across UX writing, product strategy,
-      program execution, automation design, technical documentation, and product marketing —
-      wherever structure breaks and systems need alignment.
-    </p>
+  <!-- Writing -->
+  <section id="writing">
+    <h2>Writing</h2>
+    <ul id="blog-list"></ul>
+  </section>
 
-    <div class="hero-buttons">
-      <a href="#work" class="btn-primary">Explore Work</a>
-      <a href="assets/BhumiKhokhani-Resume.pdf" target="_blank" class="btn-outline">Resume</a>
+  <!-- Fun Stuff -->
+  <section id="fun">
+    <h2>Fun Stuff</h2>
+    <div class="fun-card">
+      <img src="assets/crochet.jpg" alt="Crochet">
+      <a href="https://instagram.com/yourcrochet" target="_blank">See Crochet Work</a>
     </div>
-  </div>
-
-  <div class="hero-right">
-    <img src="assets/bhumikhokhani.jpeg" alt="Bhumi Khokhani">
-  </div>
-</section>
-
-<!-- POSITIONING -->
-<section class="positioning">
-  <div class="positioning-inner">
-    <div class="positioning-left">
-      <h3>How I Think</h3>
+    <div class="fun-card">
+      <img src="assets/blender.jpg" alt="Blender 3D">
+      <a href="https://instagram.com/yourblender" target="_blank">See 3D Models</a>
     </div>
-    <div class="positioning-right">
-      <p>
-        I look for structural friction — unclear ownership, messy workflows,
-        scattered documentation, or automation without experience design.
-      </p>
-      <p>
-        Then I design systems that align product, language, operations,
-        and decision-making. Clean interfaces. Clear narratives.
-        Strong execution logic.
-      </p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- WORK -->
-<section id="work" class="work-section">
-  <div class="section-header">
-    <h3>Selected Work</h3>
-    <div class="gold-line"></div>
-    <p>
-      Case studies across product systems, UX strategy, AI workflows,
-      content governance, and operational execution.
-    </p>
-  </div>
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>What Others Say</h2>
+    <blockquote>
+      "Bhumi is a detail-oriented UX writer who bridges design and tech seamlessly."
+      <footer>- Jane Doe, Product Manager at Amazon</footer>
+    </blockquote>
+    <blockquote>
+      "Her ability to set up efficient processes helped our team deliver faster."
+      <footer>- John Smith, Team Lead at FAQPRIME</footer>
+    </blockquote>
+  </section>
 
-  <div id="work-grid" class="work-grid"></div>
-</section>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Reach me via <a href="mailto:yourname@example.com">email</a> or <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>.</p>
+  </section>
 
-<!-- ENDORSEMENTS -->
-<section id="endorsements" class="endorsement-band">
-  <div class="section-header light">
-    <h3>Professional Endorsements</h3>
-    <div class="gold-line center"></div>
-  </div>
-  <div id="testimonial-grid" class="testimonial-grid"></div>
-</section>
+  <footer>
+    <p>© 2026 Bhumi Khokhani</p>
+  </footer>
 
-<!-- LETTERS -->
-<section class="letters-section">
-  <div class="section-header">
-    <h3>Formal Recommendation Letters</h3>
-    <div class="gold-line"></div>
-  </div>
-  <div id="letters-grid" class="letters-grid"></div>
-</section>
-
-<footer>
-  <p>© 2026 Bhumi Khokhani</p>
-</footer>
-
-<div id="letter-modal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal()">×</span>
-    <iframe id="modal-frame"></iframe>
-  </div>
-</div>
-
-<script src="js/loadWork.js"></script>
-<script src="js/loadTestimonials.js"></script>
-<script src="js/loadLetters.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
