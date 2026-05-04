@@ -2,34 +2,38 @@
 document.querySelectorAll('nav a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
 
-// Fetch Hashnode RSS feed via rss2json
-const rssUrl = "https://bhumikhokhani.hashnode.dev/rss.xml";
-const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-fetch(apiUrl)
+// Fetch Hashnode RSS feed via rss2json proxy
+fetch("https://api.rss2json.com/v1/api.json?rss_url=https://bhumikhokhani.hashnode.dev/rss.xml")
   .then(response => response.json())
   .then(data => {
-    let blogSection = document.getElementById("blog-list"); // make sure your HTML has <div id="blog-list"></div>
-    blogSection.innerHTML = ""; // clear any placeholder content
+    let blogSection = document.getElementById("blogs");
+    if (!blogSection) return;
 
-    data.items.slice(0, 5).forEach(item => { // show latest 5 posts
-      let blogCard = `
-        <div class="card">
-          <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
-          <p>${new Date(item.pubDate).toLocaleDateString()}</p>
-          <p>${item.description.substring(0, 120)}...</p>
-        </div>
+    // Limit to latest 5 posts
+    data.items.slice(0, 5).forEach(item => {
+      const blogCard = document.createElement("div");
+      blogCard.classList.add("card");
+
+      blogCard.innerHTML = `
+        <h3>${item.title}</h3>
+        <p>${new Date(item.pubDate).toLocaleDateString()}</p>
+        <a href="${item.link}" target="_blank">Read More</a>
       `;
-      blogSection.innerHTML += blogCard;
+
+      blogSection.appendChild(blogCard);
     });
   })
   .catch(error => {
     console.error("Error fetching blog feed:", error);
-    document.getElementById("blog-list").innerHTML = "<p>Unable to load blogs right now.</p>";
+    let blogSection = document.getElementById("blogs");
+    if (blogSection) {
+      blogSection.innerHTML = "<p>Unable to load blogs at the moment.</p>";
+    }
   });
