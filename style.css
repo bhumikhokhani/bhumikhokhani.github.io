@@ -1,20 +1,19 @@
 :root {
-  --primary: #2575fc;
-  --secondary: #6a11cb;
-  --bg: #f9f9f9;
-  --text: #333;
+  --primary: #f5c518; /* accent yellow */
+  --dark-bg: #111;
+  --light-bg: #f9f9f9;
+  --text-dark: #111;
+  --text-light: #eee;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
 }
 
 header {
-  background: #222;
-  color: #fff;
+  background: var(--dark-bg);
+  color: var(--text-light);
   padding: 1rem 2rem;
 }
 
@@ -31,7 +30,7 @@ header {
 }
 
 .nav-links a {
-  color: #fff;
+  color: var(--text-light);
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -46,37 +45,69 @@ header {
 }
 
 .hero {
-  background: linear-gradient(to right, var(--secondary), var(--primary));
-  color: #fff;
+  background: var(--dark-bg);
+  color: var(--text-light);
   text-align: center;
   padding: 6rem 2rem;
 }
 
-.btn {
-  background: #fff;
-  color: var(--primary);
+.hero h2 {
+  font-size: 2.5rem;
+  border-bottom: 3px solid var(--primary);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.btn, .btn-outline {
   padding: 0.7rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
+  margin: 0.5rem;
+}
+
+.btn {
+  background: var(--primary);
+  color: var(--dark-bg);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
 }
 
 .section {
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
+}
+
+.section.light {
+  background: var(--light-bg);
+  color: var(--text-dark);
+}
+
+.section.dark {
+  background: var(--dark-bg);
+  color: var(--text-light);
 }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 .card {
   background: #fff;
+  color: #111;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s;
+}
+
+.section.dark .card {
+  background: #222;
+  color: #eee;
 }
 
 .card:hover {
@@ -85,39 +116,3 @@ header {
 
 blockquote {
   font-style: italic;
-  margin: 0;
-}
-
-footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 2rem;
-}
-#blog-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-#blog-list .card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-#blog-list .card:hover {
-  transform: translateY(-5px);
-}
-
-#blog-list h3 {
-  margin-top: 0;
-}
-
-#blog-list a {
-  text-decoration: none;
-  color: var(--primary);
-}
-
